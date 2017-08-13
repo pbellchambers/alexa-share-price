@@ -19,9 +19,9 @@ const languageStrings = {
             HELP_MESSAGE: 'You can say give me the share price for XYZ, or, you can say exit... What can I help you with?',
             HELP_REPROMPT: 'What can I help you with?',
             UNHANDLED_MESSAGE: 'Sorry, I didn\t understand your request.',
-            STOP_MESSAGE: 'Goodbye!',
-        },
-    },
+            STOP_MESSAGE: 'Goodbye!'
+        }
+    }
 };
 
 const handlers = {
@@ -37,7 +37,7 @@ const handlers = {
         var invalidSharePriceMessage = this.t('GET_INVALID_SHARE_PRICE_MESSAGE');
         var skillName = this.t('SKILL_NAME');
         
-        if(stockSymbol != encodeURIComponent(stockSymbol)) {
+        if(stockSymbol !== encodeURIComponent(stockSymbol)) {
             speechOutput = invalidSharePriceMessage + stockSymbol;
             console.log('Speech Output: ' + speechOutput);
             alexa.emit(':tellWithCard', speechOutput, stockSymbol + ' ' + skillName, sharePrice);
@@ -58,7 +58,7 @@ const handlers = {
                 }
                 
                 // Create speech output
-                if (sharePrice == '') {
+                if (sharePrice === '') {
                     speechOutput = invalidSharePriceMessage + stockSymbol;
                 } else {
                     speechOutput = sharePriceMessage1 + stockSymbol + sharePriceMessage2 + sharePrice;
@@ -82,7 +82,7 @@ const handlers = {
     },
     'Unhandled': function () {
         this.emit(':tell', this.t('UNHANDLED_MESSAGE'));
-    },
+    }
 };
 
 exports.handler = function (event, context, callback) {
@@ -102,23 +102,20 @@ function httpGet(query, callback) {
         path: '/query?function=TIME_SERIES_INTRADAY&symbol=LON:' + query + '&interval=1min&apikey=3E1HUGJQ89TUJZIH',
         method: 'GET'
     };
-
     var req = https.request(options, (res) => {
+        var body = '';
 
-            var body = '';
+        res.on('data', (d) => {
+            body += d;
+        });
 
-    res.on('data', (d) => {
-        body += d;
-});
+        res.on('end', function () {
+            callback(body);
+        });
 
-    res.on('end', function () {
-        callback(body);
     });
-
-});
     req.end();
-
     req.on('error', (error) => {
         console.error('ERROR: ' + error);
-});
+    });
 }
