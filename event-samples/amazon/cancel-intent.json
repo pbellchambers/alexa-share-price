@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "SessionId.2dfa77bb-cec1-42b5-a752-2426de1cffc1",
+    "application": {
+      "applicationId": "amzn1.ask.skill.70498491-196e-40ad-8763-3f77d7a35318"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.testuserid1234"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.d9f57e57-0903-41f6-ab83-f885707cfa22",
+    "locale": "en-GB",
+    "timestamp": "2017-08-08T10:33:19Z",
+    "intent": {
+      "name": "AMAZON.CancelIntent",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}
