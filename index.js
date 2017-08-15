@@ -17,7 +17,7 @@ const languageStrings = {
       GET_INVALID_SHARE_PRICE_MESSAGE: 'Sorry, I couldn\'t get the share price for ',
       HELP_MESSAGE: 'You can say give me the share price for XYZ, or, you can say exit... What can I help you with?',
       HELP_REPROMPT: 'What can I help you with?',
-      UNHANDLED_MESSAGE: 'Sorry, I didn\t understand your request.',
+      UNHANDLED_MESSAGE: 'Sorry, I didn\'t understand your request.',
       STOP_MESSAGE: 'Goodbye!',
     },
   },
