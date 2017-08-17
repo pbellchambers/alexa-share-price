@@ -4,6 +4,9 @@ A skill for Amazon Alexa that looks up the current share price for a given stock
 
 ## Requires
 - NodeJS 6.10+
+```
+npm install
+```
 
 ## Current Limitations
 - Only works for London Stock Exchange shares

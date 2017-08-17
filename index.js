@@ -12,10 +12,10 @@ const languageStrings = {
   'en': {
     translation: {
       SKILL_NAME: 'Share Price',
-      GET_SHARE_PRICE_MESSAGE_1: 'The current share price for ',
-      GET_SHARE_PRICE_MESSAGE_2: ' is: ',
+      GET_SHARE_PRICE_MESSAGE_1: 'The current share price for <say-as interpret-as="spell-out">',
+      GET_SHARE_PRICE_MESSAGE_2: '</say-as> is: ',
       GET_INVALID_SHARE_PRICE_MESSAGE: 'Sorry, I couldn\'t get the share price for ',
-      HELP_MESSAGE: 'You can say give me the share price for XYZ, or, you can say exit... What can I help you with?',
+      HELP_MESSAGE: 'You can say give me the share price for <say-as interpret-as="spell-out">SBRY</say-as>, or, you can say exit... What can I help you with?',
       HELP_REPROMPT: 'What can I help you with?',
       UNHANDLED_MESSAGE: 'Sorry, I didn\'t understand your request.',
       STOP_MESSAGE: 'Goodbye!',
